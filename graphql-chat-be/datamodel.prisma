@@ -1,0 +1,25 @@
+type User {
+  id: ID! @id
+  name: String!
+  profilePicture: String
+  chatHistory: [ChatHistory!]! @relation(name: "UsersChatHistory")
+  chatReadHistory: [ChatHistory!]! @relation(name: "UsersChatReadHistory")
+  currentlyChattingIn: [ChatHistory!]! @relation(link: INLINE, name: "CurrentlyChattingIn")
+  chatsInvolved: [Chat] @relation(name: "MeChatsInvolved")
+}
+
+type ChatHistory {
+    id: ID! @id
+    users: [User!]! @relation(link: INLINE, name: "UsersChatHistory")
+    chats: [Chat!]!
+    chattingUsers: [User!]! @relation(name: "CurrentlyChattingIn")
+    readByUsers: [User!]! @relation(link: INLINE, name: "UsersChatReadHistory")
+}
+
+type Chat {
+   id: ID! @id
+   sender: User! @relation(link: INLINE, name: "MeChatsInvolved")
+   message: String!
+   createdDate: DateTime! @createdAt
+   chatHistoryId: ChatHistory @relation(link: INLINE)
+}
