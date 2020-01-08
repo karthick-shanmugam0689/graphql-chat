@@ -1,0 +1,1 @@
+export const LOGIN_USER_SESSION_STORAGE_ID = 'userId'
