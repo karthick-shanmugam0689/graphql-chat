@@ -10,18 +10,18 @@ We use Prisma here to establish a typesafe database access and also to create ta
 
 Follow the below steps to setup a server via Prisma
 
-1. Run the below command to install prisma and it's dependancies
+1. Run the following command to install prisma and it's dependancies
 ```npm install -g prisma```
 
 2. Install docker
 
-3. To start prisma and connected database, run the below command
+3. To start prisma and connected database, run the following command
 ```docker-compose up -d```
 
-4. To configure your prisma API, run the below command
+4. To configure your prisma API, run the following command
 ```prisma init --endpoint http://localhost:4466```
 
-5. Now deploy the prisma API, run the below command
+5. Now deploy the prisma API, run the following command
 ```prisma init --endpoint http://localhost:4466```
 
 Now you can view the data stored in database through http://localhost:4466/_admin
@@ -35,10 +35,10 @@ graphql-chat-fe is a simple React app created through Create-React-App typescrip
 
 Follow the below steps to install the dependancies and start the webpack server to see the chat-app running
 
-1. Run the below command to install the dependancies
+1. Run the following command to install the dependancies
 ```npm install```
 
-2. Run the below command to start the webpack server to see the chat-app running
+2. Run the following command to start the webpack server to see the chat-app running
 ```npm run start```
 
 That's it. Your frontend is now able to consume the graphql apis exposed by Prisma and also able to subscribe for real time updates happening in the database
